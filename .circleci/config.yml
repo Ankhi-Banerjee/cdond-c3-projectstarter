@@ -105,8 +105,7 @@ jobs:
       # Restore from cache
       # Your job code here
       - checkout
-      - run: npm i
-      - run: npm run test
+      - run: npm audit --audit-level=critical
 
   scan-backend:
     docker:
@@ -116,8 +115,7 @@ jobs:
       # Restore from cache
       # Your job code here
       - checkout
-      - run: npm i
-      - run: npm run test
+      - run: npm audit --audit-level=critical
 
   deploy-infrastructure:
     docker:
